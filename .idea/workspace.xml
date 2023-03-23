@@ -4,31 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f83403-c52e-46e6-bf91-4c8082fca48d" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/fromToJson/jsonToMetroMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/inputHandler/input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/station.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/baltimore.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/lausanne.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/prague.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/metrograph/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="06f83403-c52e-46e6-bf91-4c8082fca48d" name="Changes" comment="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/fromToJson/jsonToMetroMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/fromToJson/jsonToMetroMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/inputHandler/input.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/inputHandler/input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/station.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/baltimore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/lausanne.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +31,46 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MetroGraph" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MetroGraph" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MetroGraph" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MetroGraph" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +89,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jacqu/Desktop/HyperMetro",
+    "last_opened_file_path": "C:/Users/jacqu/Desktop/MetroGraph",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,7 +101,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -99,6 +119,62 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="metro.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="metro.Main" />
+      <module name="MetroGraph.app.main" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;./src/ressource/prague.json&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="metro.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MetroGraph [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="check" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MetroGraph [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileJava" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,6 +189,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.metro.Main" />
+        <item itemvalue="Gradle.MetroGraph [check]" />
+        <item itemvalue="Gradle.MetroGraph [compileJava]" />
       </list>
     </recent_temporary>
   </component>
@@ -126,8 +205,21 @@
       <updated>1679314018036</updated>
       <workItem from="1679314020314" duration="423000" />
       <workItem from="1679314695051" duration="54000" />
-      <workItem from="1679314803320" duration="1313000" />
+      <workItem from="1679314803320" duration="1395000" />
+      <workItem from="1679317199205" duration="637000" />
+      <workItem from="1679395012466" duration="1301000" />
+      <workItem from="1679506364956" duration="641000" />
+      <workItem from="1679565124838" duration="1732000" />
+      <workItem from="1679600640563" duration="436000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1679316146822</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679316146822</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,22 +227,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/main/java/metrograph/Main.java</url>
-          <line>10</line>
-          <properties class="metrograph.Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -59,7 +59,7 @@ public class metroLine {
     }
 
     public boolean exist(String station){
-        return map.stream().noneMatch(s -> s.getName().equals(station));
+        return map.stream().anyMatch(s -> s.getName().equals(station));
     }
 
     public void printIndexes() {
@@ -107,6 +107,14 @@ public class metroLine {
         map.removeFirst();
         map.removeLast();
 
+    }
+
+    public LinkedList<station> line(){
+        return map;
+    }
+
+    public station get(String station) {
+        return map.stream().filter(s -> s.getName().equals(station)).findFirst().orElse(null);
     }
 }
 

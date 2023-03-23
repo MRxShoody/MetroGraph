@@ -25,7 +25,8 @@ public class metroMap extends HashMap<String, metroLine>{
 
     public void connect(String line1, String station1, String line2, String station2){
         if(line1.equals(line2) && station1.equals(station2)) return;
-        if(get(line1).exist(station1) || get(line2).exist(station2)){
+
+        if(!get(line1).exist(station1) || !get(line2).exist(station2)){
             System.out.println("Error! Such a station doesn't exist!");
             return;
         }
@@ -40,7 +41,6 @@ public class metroMap extends HashMap<String, metroLine>{
             v.printLine();
         });
     }
-
     public void printLineWithTransfer(String line){
         this.get(line).printWithTransfers();
     }
@@ -50,5 +50,6 @@ public class metroMap extends HashMap<String, metroLine>{
     public void printLineIndexes(String line){
         this.get(line).printIndexes();
     }
+
 
 }

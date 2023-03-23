@@ -1,8 +1,10 @@
 package metrograph.inputHandler;
 
 import metrograph.fromToJson.jsonToMetroMap;
+import metrograph.graph.bfsPath;
 import metrograph.mapUtil.metroMap;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -43,6 +45,7 @@ public class input {
                 case "/remove" -> remove(input[1],input[2]);
                 case "/add" -> addHead(input[1],input[2]);
                 case "/output" -> metroMap.printLineWithTransfer(input[1]);
+                case "/route" -> bfsPath.execute(metroMap,input[2],input[4]);
                 case "/connect" -> metroMap.connect(input[1],input[2],input[3],input[4]);
                 case "/exit" -> running = false;
                 default -> System.out.println("Invalid command");

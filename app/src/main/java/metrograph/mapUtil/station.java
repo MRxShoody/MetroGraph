@@ -8,6 +8,7 @@ public class station implements Comparable<station> {
 
     private final String name;
     private List<connection> transfer = Collections.emptyList();
+
     public station(Integer place,String name) {
         this.place = place;
         this.name = name;
@@ -54,4 +55,13 @@ public class station implements Comparable<station> {
     public int compareTo(station o) {
         return this.place - o.place;
     }
+
+    public void addTransfer(List<connection> transferList) {
+        transfer.addAll(transferList);
+    }
+
+    public List<connection> getTransfer() {
+        return transfer;
+    }
+
 }

@@ -1,15 +1,9 @@
 package metrograph.mapUtil;
 
-public class connection {
-    private final String line;
-    private final String station;
+public record connection(String line, String station) {
 
-    public connection(String line, String station) {
-        this.line = line;
-        this.station = station;
-    }
-
-    public String printConnection(){
+    public String printConnection() {
         return station + " (" + line + " line) ";
     }
+
 }

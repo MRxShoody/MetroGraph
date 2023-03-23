@@ -1,18 +1,13 @@
 package metrograph;
 
 import metrograph.inputHandler.input;
-import metrograph.mapUtil.metroMap;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) {
 
         System.out.println(System.getProperty("user.dir"));
 
-        System.out.println(Files.exists(Path.of(args[0])));
 
         if (args[0] == null) {
             System.out.println("Error! Such a file doesn't exist!.");
@@ -27,7 +22,7 @@ public class Main {
 
 /*
 
-
+System.out.println(System.getProperty("user.dir"));
 System.out.println(metroMap.create(args[0]));
 metro.create(args[0]).printMap();
 

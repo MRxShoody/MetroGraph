@@ -21,12 +21,9 @@ public class jsonToMetroMap {
              InputStreamReader isr = new InputStreamReader(fos,
                      StandardCharsets.UTF_8)){
 
-
-
             Map<String, Map<String, station>> jsonMap = new Gson().fromJson(isr
                     , new TypeToken<Map<String, Map<String, station>>>() {
                     }.getType());
-
 
             jsonMap.forEach((lineName, stations) -> map.put(lineName, new metroLine(stations)));
 
