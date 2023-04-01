@@ -22,7 +22,7 @@ public class metroLine {
     }
 
     public metroLine(Map<String,station> map){
-        map.forEach((k,v) -> this.map.add(new station(Integer.parseInt(k),v.getName(),v.getTransferList())));
+        map.forEach((k,v) -> this.map.add(new station(Integer.parseInt(k),v.getName(),v.getTransferList(),v.getTime())));
     }
 
 

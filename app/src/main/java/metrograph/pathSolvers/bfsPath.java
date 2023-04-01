@@ -1,5 +1,6 @@
-package metrograph.graph;
+package metrograph.pathSolvers;
 
+import metrograph.fromJsonToGraph.metroMapToGraph;
 import metrograph.mapUtil.connection;
 import metrograph.mapUtil.metroMap;
 
@@ -7,8 +8,8 @@ import java.util.*;
 
 public class bfsPath {
 
-    public static void execute(metroMap map, String start, String end){
-        Map<String, List<connection>> graph = toGraph.execute(map);
+    public static void execute(metroMap map,String line1, String start,String line2, String end){
+        Map<String, List<connection>> graph = metroMapToGraph.execute(map);
 
         Map<String, Boolean> visited = new HashMap<>();
 
@@ -28,14 +29,14 @@ public class bfsPath {
             List<connection> adjList = graph.get(current_node);
             //Loop through neighbors node to find the 'end'
             for (connection node : adjList) {
-                if (!visited.containsKey(node.station())) {
+                if (!visited.containsKey(node.getStation())) {
                     //Visit and add the node to the queue
-                    visited.put(node.station(), true);
-                    queue.add(node.station());
+                    visited.put(node.getStation(), true);
+                    queue.add(node.getStation());
                     //update its precedings nodes
-                    path.put(node.station(), current_node);
+                    path.put(node.getStation(), current_node);
                     //If reached the end node then stop BFS
-                    if (node.station().equals(end)) {
+                    if (node.getStation().equals(end)) {
                         queue.clear();
                         break;
                     }
@@ -57,9 +58,27 @@ public class bfsPath {
         //Reverse the route - bring start to the front
         Collections.reverse(route);
         //Output the route
-        route.forEach(System.out::println);
+
+        if(line1.equals(line2)) {
+            route.forEach(System.out::println);
+            return;
+        }
+
+        Iterator<String> it = route.iterator();
+        String starte = it.next();
+        String currentLine = metroMapToGraph.line.get(starte);
+
+        System.out.println(starte);
+
+
+        while (it.hasNext()) {
+            String current = it.next();
+            if (!metroMapToGraph.line.get(current).equals(currentLine)) {
+                System.out.println(current);
+                System.out.println("Transition to line " + metroMapToGraph.line.get(current));
+                currentLine = metroMapToGraph.line.get(current);
+            }
+            System.out.println(current);
+        }
     }
-
-
-
 }

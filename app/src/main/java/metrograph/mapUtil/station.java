@@ -8,6 +8,7 @@ public class station implements Comparable<station> {
 
     private final String name;
     private List<connection> transfer = Collections.emptyList();
+    private int time = 0;
 
     public station(Integer place,String name) {
         this.place = place;
@@ -17,6 +18,11 @@ public class station implements Comparable<station> {
     public station(Integer place,String name, List<connection> transfer) {
         this(place,name);
         this.transfer = transfer;
+    }
+
+    public station(Integer place,String name, List<connection> transfer, int time) {
+        this(place,name,transfer);
+        this.time = time;
     }
 
     public String getName() {
@@ -47,6 +53,10 @@ public class station implements Comparable<station> {
         transfer.add(new connection(line,station));
     }
 
+    public void addTransfer(String line, String station, int time){
+        transfer.add(new connection(line,station,time));
+    }
+
     public boolean hasTransfer(){
         return !transfer.isEmpty();
     }
@@ -64,4 +74,7 @@ public class station implements Comparable<station> {
         return transfer;
     }
 
+    public int getTime() {
+        return time;
+    }
 }

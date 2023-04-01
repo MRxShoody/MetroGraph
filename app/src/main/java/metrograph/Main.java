@@ -1,18 +1,36 @@
 package metrograph;
 
+import metrograph.fromJsonToGraph.jsonToMetroMap;
 import metrograph.inputHandler.input;
+import metrograph.mapUtil.metroMap;
+
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(System.getProperty("user.dir"));
-
+        //System.out.println(System.getProperty("user.dir"));
 
         if (args[0] == null) {
             System.out.println("Error! Such a file doesn't exist!.");
             return;
         }
+
+        metroMap metroMap = jsonToMetroMap.execute(args[0]);
+
+        /*
+        Map<String, List<connection>> metroGraph = metroMapToGraph.execute(metroMap);
+
+
+        metroGraph.forEach((k,v) -> {
+            System.out.println(k);
+            //v.forEach(m->System.out.println(m.printConnection()));
+            v.forEach(connection::getTime);
+            System.out.println("\n");
+        });
+*/
+
+        //dijkPath.execute(metroMap,"Vysehrad","Namesti Republiky");
 
         input.execute(args[0]);
 
