@@ -1,2 +1,2 @@
 # MetroGraph
-first itaration of metro path algorithm using gradle, gson deserialization, generics, streams, regex, factory pattern 
+first iteration of metro path algorithms using gradle, gson deserialization, generics, streams, regex, factory pattern 
