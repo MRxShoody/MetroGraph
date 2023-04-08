@@ -1,10 +1,11 @@
-package metrograph.fromJsonToGraph;
+package metrograph.prague.fromJsonToGraph;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import metrograph.mapUtil.metroLine;
-import metrograph.mapUtil.metroMap;
-import metrograph.mapUtil.station;
+
+import metrograph.prague.mapUtil.metroLine;
+import metrograph.prague.mapUtil.station;
+import metrograph.prague.mapUtil.metroMap;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -30,10 +31,15 @@ public class jsonToMetroMap {
             return map;
 
         }catch (IOException e){
+
             System.out.println("Error! Such a file doesn't exist!");
+
         }catch (Exception e){
+
             System.out.println("Incorrect file");
+
         }
+
         return null;
     }
 }

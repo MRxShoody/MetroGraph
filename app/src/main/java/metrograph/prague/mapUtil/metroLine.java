@@ -1,4 +1,4 @@
-package metrograph.mapUtil;
+package metrograph.prague.mapUtil;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class metroLine {
 
     private final LinkedList<station> map = new LinkedList<>();
-
     public static metroLine create(String path) {
         return new metroLine(Path.of(path));
     }
@@ -20,21 +19,17 @@ public class metroLine {
             System.out.println("Error! Such a file doesn't exist!.");
         }
     }
-
     public metroLine(Map<String,station> map){
         map.forEach((k,v) -> this.map.add(new station(Integer.parseInt(k),v.getName(),v.getTransferList(),v.getTime())));
     }
 
-
     public void append(String station){
         map.add(new station(map.size()+1,station));
     }
-
     public void addHead(String station){
         map.forEach(s -> s.setPlace(s.getPlace()+1));
         map.addFirst(new station(1,station));
     }
-
     public void remove(String station){
         int i = 0;
         for (station s : map) {
@@ -50,22 +45,18 @@ public class metroLine {
             s.setPlace(s.getPlace()-1);
         }
     }
-
     public void connect(String station1, String line2, String station2) {
         station s1 = map.stream().filter(s -> s.getName().equals(station1)).findFirst().orElse(null);
         assert s1 != null;
         s1.addTransfer(line2,station2);
 
     }
-
     public boolean exist(String station){
-        return map.stream().anyMatch(s -> s.getName().equals(station));
+        return map.stream().noneMatch(s -> s.getName().equals(station));
     }
-
     public void printIndexes() {
         map.forEach(s -> System.out.println(s.getPlace() + " - " + s.getName()));
     }
-
     public void printLine(){
         Collections.sort(map);
 

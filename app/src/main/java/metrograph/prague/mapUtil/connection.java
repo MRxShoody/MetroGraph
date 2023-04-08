@@ -1,9 +1,8 @@
-package metrograph.mapUtil;
+package metrograph.prague.mapUtil;
 
 public class connection {
     private final String line;
     private final String station;
-
     private int travelTime = 0;
 
     public connection(String line, String station) {

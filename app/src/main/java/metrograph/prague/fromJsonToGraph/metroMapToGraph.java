@@ -1,10 +1,10 @@
-package metrograph.fromJsonToGraph;
+package metrograph.prague.fromJsonToGraph;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import metrograph.mapUtil.connection;
-import metrograph.mapUtil.metroMap;
-import metrograph.mapUtil.station;
+import metrograph.prague.mapUtil.station;
+import metrograph.prague.mapUtil.connection;
+import metrograph.prague.mapUtil.metroMap;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
@@ -18,20 +18,22 @@ public class metroMapToGraph {
      public static Map<String, List<connection>> execute(metroMap map){
 
         Gson gson = new Gson();
-        String jsonString = gson.toJson(map);
 
+        String jsonString = gson.toJson(map);
 
         // créer une map copy en utilisant la structure de metroMap
         Type type = new TypeToken<metroMap>(){}.getType();
         metroMap copy = gson.fromJson(jsonString, type);
 
-
         // pour chacune des lignes, on créer un doubly linked list
         // utilisation d'une copie pour ne pas altérer les fonctionnalités de base de metroMap
+
         copy.forEach((k,v)->{
+
             Iterator<station> it = v.line().iterator();
             station previous = it.next();
             station current;
+
             while(it.hasNext()){
                 current = it.next();
 
@@ -71,7 +73,6 @@ public class metroMapToGraph {
             graph.get(station.getName()).removeIf(connection -> connection.getStation().equals(station.getName()));
 
         }));
-
 
         return graph;
     }

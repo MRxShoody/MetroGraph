@@ -1,4 +1,4 @@
-package metrograph.mapUtil;
+package metrograph.prague.mapUtil;
 
 import java.util.Collections;
 import java.util.List;

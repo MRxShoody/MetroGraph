@@ -1,11 +1,10 @@
-package metrograph.inputHandler;
+package metrograph.prague.inputHandler;
 
-import metrograph.fromJsonToGraph.jsonToMetroMap;
-import metrograph.pathSolvers.bfsPath;
-import metrograph.mapUtil.metroMap;
-import metrograph.pathSolvers.dijkPath;
+import metrograph.prague.fromJsonToGraph.jsonToMetroMap;
+import metrograph.prague.mapUtil.metroMap;
+import metrograph.prague.pathSolvers.bfsPath;
+import metrograph.prague.pathSolvers.dijkPath;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
@@ -14,6 +13,7 @@ import java.util.regex.Pattern;
 public class input {
 
     private static metroMap metroMap;
+
     public static void execute(String fileName) {
 
         metroMap = jsonToMetroMap.execute(fileName);
@@ -68,15 +68,6 @@ public class input {
         metroMap.addHead(line,station);
     }
 
-
-
-
-
 }
 
 
-/*
-input = Arrays.stream(input)
-.map(k -> k.replaceAll("\"",""))
-.toArray(String[]::new);
-*/

@@ -1,8 +1,8 @@
-package metrograph.pathSolvers;
+package metrograph.prague.pathSolvers;
 
-import metrograph.fromJsonToGraph.metroMapToGraph;
-import metrograph.mapUtil.connection;
-import metrograph.mapUtil.metroMap;
+import metrograph.prague.fromJsonToGraph.metroMapToGraph;
+import metrograph.prague.mapUtil.connection;
+import metrograph.prague.mapUtil.metroMap;
 
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class dijkPath {
 
         public node(String station, int distance) {
             this.station = station;
-            this.distance = distance;;
+            this.distance = distance;
         }
 
         @Override
@@ -34,29 +34,19 @@ public class dijkPath {
         Map<String, node> nodes = new HashMap<>();
 
         PriorityQueue<node> vertexQueue = new PriorityQueue<>();
-        //Starting vertex distance should be 0
 
         node startNode = new node(start, 0);
         startNode.distance = 0;
 
-        //add source vertex to the queue
         vertexQueue.add(startNode);
 
-
-        //run until queue is not empty
         while (!vertexQueue.isEmpty()) {
-            //Get vertex from the top of queue
-            //i.e. vertex with least distance
+
             node actualVertex = vertexQueue.peek();
 
-            //get adjacent vertices through connected edges
             for (connection edge : graph.get(actualVertex.station)) {
 
-
                 node v = new node(edge.getStation(), Integer.MAX_VALUE);
-
-
-                //If not visited then check whether the distance value could be lower
 
                 if (!visited.containsKey(v.station)) {
 
@@ -68,38 +58,25 @@ public class dijkPath {
 
                         vertexQueue.add(v);
 
-                        //nodes.remove(edge.getStation());
                         nodes.put(edge.getStation(), v);
                     }
                 }
-
-
             }
-            //remove vertex from queue
+
             vertexQueue.poll();
-            //mark vertex as visited
+
             visited.put(actualVertex.station, true);
         }
 
 
         String nodeEnd = end;
         List<String> route = new ArrayList<>();
-        //Loop until node is null to reach start node
-        //becasue start.prev == null
+
         while (path.get(nodeEnd) != null) {
             route.add(nodeEnd);
             nodeEnd = path.get(nodeEnd);
         }
         route.add(nodeEnd);
-        //Reverse the route - bring start to the front
-        //Collections.reverse(route);
-        //Output the route
-
-
-/*        System.out.println(route);
-        nodes.forEach((k, v) -> System.out.println(k + " " + v.distance));
-        System.out.println(nodes.get(end).distance);*/
-
 
         if(line1.equals(line2)) {
             route.forEach(System.out::println);

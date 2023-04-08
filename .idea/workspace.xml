@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06f83403-c52e-46e6-bf91-4c8082fca48d" name="Changes" comment="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges" />
+    <list default="true" id="06f83403-c52e-46e6-bf91-4c8082fca48d" name="Changes" comment="dijktra algorithm applied to prague metro implementation with a bit of refactoring">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/metrograph/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/fromJsonToGraph/jsonToMetroMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/fromJsonToGraph/metroMapToGraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/inputHandler/input.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/metroMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/mapUtil/station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/pathSolvers/bfsPath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/metrograph/pathSolvers/dijkPath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/prague.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +74,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ffe0f8fa-6d7a-400d-b62d-662c6ec5d62c" />
+        <option name="url" value="https://github.com/MRxShoody/MetroGraph.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -198,6 +224,8 @@
       <workItem from="1679506364956" duration="641000" />
       <workItem from="1679565124838" duration="1732000" />
       <workItem from="1679600640563" duration="696000" />
+      <workItem from="1680342865260" duration="432000" />
+      <workItem from="1680987736169" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1679316146822</created>
@@ -220,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679601218769</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dijktra algorithm applied to prague metro implementation with a bit of refactoring">
+      <created>1680343165744</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680343165744</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +275,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges" />
-    <option name="LAST_COMMIT_MESSAGE" value="Custom data structure to Graph. Implementation of Breadth-First search algorithm to find shortest path with unweighted edges" />
+    <MESSAGE value="dijktra algorithm applied to prague metro implementation with a bit of refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="dijktra algorithm applied to prague metro implementation with a bit of refactoring" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
