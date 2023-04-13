@@ -5,20 +5,15 @@ import metrograph.london.graphUtils.transfer;
 
 import java.util.*;
 
-public class bfsPath {
+public class bfsPath extends pathSolver {
 
-    public static void execute(Map<String, node> graph, String line1, String start, String line2, String end) {
-
-        Map<String, String> path = new HashMap<>();
-
-        Map<String, Boolean> visited = new HashMap<>();
+    public bfsPath(Map<String, node> graph, String line1, String start, String line2, String end) {
+        super(graph, line1, start, line2, end);
+    }
+    @Override
+    public void execute() {
 
         Queue<String> queue = new LinkedList<>();
-
-        String startingPoint = start + "/" + line1;
-
-        assert graph != null;
-        node startNode = graph.get(startingPoint);
 
         queue.add(startNode.nameId);
 
@@ -38,7 +33,7 @@ public class bfsPath {
 
                     path.put(node.transferId, current_node);
 
-                    if (node.transferId.equals(end + "/" + line2)) {
+                    if (node.transferId.equals(endingPoint)) {
                         queue.clear();
                         break;
                     }
@@ -48,13 +43,9 @@ public class bfsPath {
 
         path.put(startNode.nameId,null);
 
-        List<String> route = new ArrayList<>();
-        String endNode = end + "/" + line2;
-
-
-        while (path.get(endNode) != null) {
-            route.add(endNode);
-            endNode = path.get(endNode);
+        while (path.get(endingPoint) != null) {
+            route.add(endingPoint);
+            endingPoint = path.get(endingPoint);
         }
         route.add(startNode.nameId);
 
@@ -65,20 +56,7 @@ public class bfsPath {
             return;
         }
 
-        Iterator<String> it = route.iterator();
-        String starte = it.next();
-        System.out.println(graph.get(starte).nameId.split("/")[0]);
-        String currentLine = graph.get(starte).nameId.split("/")[1];
-
-
-        while (it.hasNext()) {
-            String current = it.next();
-            if (!graph.get(current).nameId.split("/")[1].equals(currentLine)) {
-                System.out.println("Transition to line " +graph.get(current).nameId.split("/")[1]);
-                currentLine = graph.get(current).nameId.split("/")[1];
-            }
-            System.out.println(graph.get(current).nameId.split("/")[0]);
-        }
+        routeIterator = route.iterator();
+        printPath();
     }
-
 }

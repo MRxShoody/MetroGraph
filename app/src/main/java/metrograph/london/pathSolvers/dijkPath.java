@@ -4,23 +4,19 @@ import metrograph.london.graphUtils.node;
 
 import java.util.*;
 
-public class dijkPath {
+public class dijkPath extends pathSolver {
+
+    public dijkPath(Map<String, node> graph, String line1, String start, String line2, String end) {
+        super(graph, line1, start, line2, end);
+    }
 
 
-    public static void execute(Map<String, node> graph, String line1, String start, String line2, String end) {
-
-        Map<String, String> path = new HashMap<>();
-
-        Map<String, Boolean> visited = new HashMap<>();
+    @Override
+    public void execute() {
 
         Map<String,Integer> time = new HashMap<>();
 
         PriorityQueue<node> queue = new PriorityQueue<>();
-
-        String startingPoint = start+"/"+line1;
-
-        assert graph != null;
-        node startNode = graph.get(startingPoint);
 
         queue.add(startNode);
 
@@ -43,7 +39,6 @@ public class dijkPath {
 
                     if (actualNode.time + time.get(visitingNode.nameId) < visitingNode.time) {
 
-
                         visitingNode.time = actualNode.time + time.get(actualNode.nameId);
 
                         path.put(visitingNode.nameId, actualNode.nameId);
@@ -59,40 +54,23 @@ public class dijkPath {
             visited.put(actualNode.nameId, true);
         }
 
-        String nodeEnd = end+"/"+line2;
 
-        List<String> route = new ArrayList<>();
-
-        while (path.get(nodeEnd) != null) {
-            route.add(nodeEnd);
-            nodeEnd = path.get(nodeEnd);
+        while (path.get(endingPoint) != null) {
+            route.add(endingPoint);
+            endingPoint = path.get(endingPoint);
         }
-        route.add(nodeEnd);
+        route.add(endingPoint);
 
         Collections.reverse(route);
 
-        nodeEnd = end+"/"+line2;
-
         if(line1.equals(line2)) {
             route.forEach(System.out::println);
-            System.out.println("Total travel time: " + graph.get(nodeEnd).time + " minutes");
+            System.out.println("Total travel time: " + graph.get(endingPoint).time + " minutes");
             return;
         }
 
-        Iterator<String> it = route.iterator();
-        String starte = it.next();
-        System.out.println(graph.get(starte).nameId.split("/")[0]);
-        String currentLine = graph.get(starte).nameId.split("/")[1];
-
-        while (it.hasNext()) {
-            String current = it.next();
-            if (!graph.get(current).nameId.split("/")[1].equals(currentLine)) {
-                System.out.println("Transition to line " +graph.get(current).nameId.split("/")[1]);
-                currentLine = graph.get(current).nameId.split("/")[1];
-            }
-            System.out.println(graph.get(current).nameId.split("/")[0]);
-        }
-
-        System.out.println("Total travel time: " + graph.get(nodeEnd).time + " minutes");
+        printPath();
+        System.out.println("Total travel time: " + graph.get(endingPoint).time + " minutes");
     }
+
 }

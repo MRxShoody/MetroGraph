@@ -5,6 +5,7 @@ import metrograph.london.pathSolvers.bfsPath;
 import metrograph.london.pathSolvers.dijkPath;
 import metrograph.london.fileToGraph.fileToGraph;
 import metrograph.london.graphUtils.node;
+import metrograph.london.pathSolvers.pathSolver;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -41,9 +42,17 @@ public class input {
 
             //Arrays.stream(input).forEach(System.out::println);
 
+            pathSolver solver;
+
             switch (input[0]) {
-                case "/route" -> bfsPath.execute(graph, input[1], input[2], input[3], input[4]);
-                case "/fastest" -> dijkPath.execute(graph, input[1], input[2], input[3], input[4]);
+                case "/route" -> {
+                    solver = new bfsPath(graph, input[1], input[2], input[3], input[4]);
+                    solver.execute();
+                }
+                case "/fastest" -> {
+                    solver = new dijkPath(graph, input[1], input[2], input[3], input[4]);
+                    solver.execute();
+                }
                 case "/exit" -> running = false;
                 default -> System.out.println("Invalid command");
             }
