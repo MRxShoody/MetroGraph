@@ -1,2 +1,2 @@
 # MetroGraph
-first iteration of metro path algorithms using gradle, gson deserialization, generics, streams, regex, factory pattern 
+Path algorithms applied to Prague and London metro systems using gradle, gson deserialization, generics, streams, regex, factory pattern ...
